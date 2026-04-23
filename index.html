@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WiFi Zone Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Home Screen -->
+    <section id="home" class="screen active">
+      <div class="logo">WiFi Zone Pro</div>
+      <p class="welcome">Connect to High-Speed Internet</p>
+      <div class="card-container">
+        <div class="card" onclick="selectWifi('Brothers')">
+          <h2>Brothers WiFi</h2>
+        </div>
+        <div class="card" onclick="selectWifi('Gralich')">
+          <h2>Gralich WiFi</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- WiFi Selection -->
+    <section id="wifi" class="screen">
+      <div class="panel">
+        <h2 id="wifi-name"></h2>
+        <p id="wifi-info"></p>
+        <button class="btn" onclick="goToScreen('payment')">Continue</button>
+      </div>
+    </section>
+
+    <!-- Payment Plans -->
+    <section id="payment" class="screen">
+      <h2>Select Your Plan</h2>
+      <div class="card-container">
+        <div class="card" onclick="selectPlan('Opening Offer',500,'24 hours')">
+          <h3>500 TZS</h3><p>24 hours</p>
+        </div>
+        <div class="card" onclick="selectPlan('Daily',1000,'1 day')">
+          <h3>1000 TZS</h3><p>1 day</p>
+        </div>
+        <div class="card" onclick="selectPlan('Weekly',3500,'7 days')">
+          <h3>3500 TZS</h3><p>1 week</p>
+        </div>
+        <div class="card" onclick="selectPlan('Monthly',10000,'30 days')">
+          <h3>10000 TZS</h3><p>1 month</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Payment Instructions -->
+    <section id="instructions" class="screen">
+      <h2>Payment Instructions</h2>
+      <p id="selected-plan"></p>
+      <div class="panel">
+        <p><strong>Pay to:</strong></p>
+        <p>Mobile Number: <span class="highlight">0618938691</span></p>
+        <p>Name: <span class="highlight">RAPHAEL MAKILIKA</span></p>
+      </div>
+      <p class="note">👉 After payment, send proof via WhatsApp or SMS:</p>
+      <ul>
+        <li>WhatsApp: <span class="highlight">0786281500</span></li>
+        <li>SMS: <span class="highlight">0618938691</span></li>
+      </ul>
+      <a href="#" class="btn whatsapp" onclick="openWhatsApp()">Send Proof on WhatsApp</a>
+    </section>
+
+    <!-- Loader Screen -->
+    <section id="loader" class="screen">
+      <div class="loader"></div>
+      <p>Processing your payment...</p>
+    </section>
+
+    <!-- Success Screen -->
+    <section id="success" class="screen">
+      <h2>Payment Received</h2>
+      <p>You are now connected 🎉</p>
+      <button class="btn" onclick="goToScreen('home')">Back to Home</button>
+    </section>
+  </div>
+
+  <!-- Floating Help Button -->
+  <button class="help-btn" onclick="toggleHelp()">?</button>
+
+  <!-- Help Modal -->
+  <div id="help-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="toggleHelp()">&times;</span>
+      <h2>Need Help?</h2>
+      <p>For support, contact:</p>
+      <ul>
+        <li>WhatsApp: <span class="highlight">0786281500</span></li>
+        <li>SMS: <span class="highlight">0618938691</span></li>
+      </ul>
+      <p>We’ll assist you with payment or connection issues.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
