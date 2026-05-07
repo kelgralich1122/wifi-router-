@@ -72,7 +72,7 @@
 
   .label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;margin-bottom:10px}
   .nets{display:flex;flex-direction:column;gap:12px}
-  .net{display:flex;align-items:center;justify-content:space-between;padding:16px;border-radius:18px;cursor:pointer;transition:transform .15s,border-color .2s;width:100%;text-align:left;color:var(--text)}
+  .net{display:flex;align-items:center;justify-content:space-between;padding:16px;border-radius:18px;cursor:pointer;transition:transform .15s,border-color .2s;width:100%;text-align:left;color:var(--text);border:1px solid var(--border)}
   .net:active{transform:scale(.98)}
   .net:hover{border-color:rgba(124,92,255,.4)}
   .net-info{display:flex;align-items:center;gap:12px}
@@ -93,17 +93,17 @@
   .wifi-card{padding:24px;border-radius:24px;text-align:center}
   .wifi-card .lg{width:64px;height:64px;border-radius:18px;background:var(--grad-primary);display:grid;place-items:center;margin:0 auto 14px;box-shadow:var(--shadow-glow)}
   .wifi-card .lg svg{width:32px;height:32px;color:#fff}
-  .pwd-box{margin-top:18px;padding:14px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--border);text-align:left;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .pwd-box{margin-top:18px;padding:14px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--border);text-align:left;display:flex;justify-content:space-between;align-items:center}
   .pwd-box .l{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
   .pwd-box code{display:block;margin-top:4px;font-size:18px;font-weight:700;letter-spacing:.05em;font-family:'Inter',monospace;background:var(--grad-primary);-webkit-background-clip:text;background-clip:text;color:transparent}
   .copy-btn{width:36px;height:36px;border-radius:10px;background:rgba(124,92,255,.2);color:var(--primary);border:0;display:grid;place-items:center;cursor:pointer;flex-shrink:0}
   .copy-btn:active{transform:scale(.95)}
   .copy-btn svg{width:16px;height:16px}
-  .auto-ok{margin-top:18px;padding:14px;border-radius:14px;background:rgba(34,197,94,.15);color:var(--success);display:flex;align-items:center;justify-content:center;gap:8px;font-weight:500;font-size:14px}
+  .auto-ok{margin-top:18px;padding:14px;border-radius:14px;background:rgba(34,197,94,.15);color:var(--success);display:flex;align-items:center;justify-content:center;gap:8px;font-weight:500;font-size:13px}
 
   /* Plans */
   .plans{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
-  .plan{position:relative;padding:16px;border-radius:18px;cursor:pointer;display:flex;flex-direction:column;gap:12px;text-align:left;color:var(--text);transition:transform .15s,border-color .2s}
+  .plan{position:relative;padding:16px;border-radius:18px;cursor:pointer;display:flex;flex-direction:column;gap:12px;text-align:left;color:var(--text);transition:transform .15s,border-color .2s;border:1px solid var(--border)}
   .plan:active{transform:scale(.97)}
   .plan:hover{border-color:rgba(124,92,255,.5)}
   .plan-icon{width:40px;height:40px;border-radius:12px;background:rgba(124,92,255,.15);color:var(--primary);display:grid;place-items:center}
@@ -113,7 +113,7 @@
   .plan-price{font-size:20px;font-weight:700;background:var(--grad-primary);-webkit-background-clip:text;background-clip:text;color:transparent}
   .plan-price small{font-size:11px;color:var(--muted);font-weight:500;-webkit-text-fill-color:var(--muted)}
   .pay-pill{margin-top:8px;padding:8px;border-radius:10px;background:var(--grad-primary);color:#fff;text-align:center;font-size:12px;font-weight:600}
-  .badge-pop{position:absolute;top:-8px;right:12px;padding:3px 8px;border-radius:999px;background:var(--grad-primary);color:#fff;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;box-shadow:var(--shadow-glow)}
+  .badge-pop{position:absolute;top:-8px;right:12px;padding:3px 8px;border-radius:999px;background:var(--grad-primary);color:#fff;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
   .info-pill{margin-top:14px;padding:10px;border-radius:14px;text-align:center;font-size:11px;color:var(--muted)}
 
   /* Payment */
@@ -163,7 +163,7 @@
   footer span{font-weight:600;background:var(--grad-primary);-webkit-background-clip:text;background-clip:text;color:transparent}
 
   /* Toast */
-  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(20,20,50,.95);backdrop-filter:blur(20px);border:1px solid var(--border);color:var(--text);padding:10px 18px;border-radius:999px;font-size:13px;font-weight:500;opacity:0;pointer-events:none;transition:all .3s;z-index:50;display:flex;align-items:center;gap:8px}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(20,20,50,.95);backdrop-filter:blur(20px);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:12px;display:flex;align-items:center;gap:8px;font-size:13px;opacity:0;transition:opacity .3s,transform .3s;z-index:1000}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
   .toast svg{width:16px;height:16px;color:var(--success)}
 </style>
@@ -179,7 +179,7 @@
       </button>
       <div class="brand">
         <div class="logo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.94 0"/></svg>
         </div>
         <div>
           <h1>WiFi Zone <span>Pro</span></h1>
@@ -211,7 +211,7 @@
     <section class="screen" id="wifi">
       <div class="wifi-card glass-strong">
         <div class="lg">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.94 0"/></svg>
         </div>
         <p style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0">Connected to</p>
         <h2 id="wifiName" style="margin-top:4px">Network</h2>
@@ -246,24 +246,24 @@
 
         <div class="row">
           <div class="row-i">
-            <div class="row-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div class="row-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             <div>
               <div class="row-l">Mobile Number</div>
               <div class="row-v mono">0618938691</div>
             </div>
           </div>
-          <button class="copy-btn" onclick="copyText('0618938691',this)" aria-label="Copy number"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <button class="copy-btn" onclick="copyText('0618938691',this)" aria-label="Copy number"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
         </div>
 
         <div class="row">
           <div class="row-i">
-            <div class="row-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="row-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M16 11a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/></svg></div>
             <div>
               <div class="row-l">Account Name</div>
               <div class="row-v">RAPHAEL MAKILIKA</div>
             </div>
           </div>
-          <button class="copy-btn" onclick="copyText('RAPHAEL MAKILIKA',this)" aria-label="Copy name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <button class="copy-btn" onclick="copyText('RAPHAEL MAKILIKA',this)" aria-label="Copy name"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
         </div>
 
         <div class="help">
@@ -271,9 +271,9 @@
         </div>
       </div>
 
-      <a id="waBtn" href="https://wa.me/255618938691?text=I%20have%20paid%20for%20WiFi%20package.%20Here%20is%20my%20proof." target="_blank" rel="noreferrer" class="btn btn-wa" style="margin-top:16px" onclick="startVerify(event)">
+      <a id="waBtn" href="https://wa.me/255618938691?text=I%20have%20paid%20for%20WiFi%20package.%20Here%20is%20my%20proof." target="_blank" rel="noreferrer" class="btn btn-wa" style="margin-top:16px">
         <span id="waBtnInner">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.6 5.9L0 24l6.3-1.6a12 12 0 0 0 5.7 1.4h.01c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.3zM12 21.8c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 2.2 12C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 7 2.9 1.9 1.9 2.9 4.4 2.9 7 0 5.4-4.4 9.7-9.9 9.7zm5.4-7.3c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2 0 1.3.9 2.5 1.1 2.7.1.2 1.8 2.8 4.5 3.9 1.5.7 2.1.7 2.8.6.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.6 5.9L0 24l6.3-1.6a12 12 0 0 0 5.7 1.4h.01c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5zm-8.5 18.6h-.01c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.8 1 1-3.6-.2-.4C2 17 1.5 14.6 1.5 12c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10z"/></svg>
           Send Proof on WhatsApp
         </span>
       </a>
@@ -323,15 +323,15 @@ const PLANS = [
   { id:'1m',  price:10000, label:'Monthly', duration:'1 Month',  icon:'cal3' }
 ];
 const ICONS = {
-  wifi:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>',
+  wifi:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.94 0"/></svg>',
   lock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
-  shield:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>',
+  shield:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 12 15 15 9"/></svg>',
   copy:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',
   check:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
   clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
   cal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
-  cal2:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/></svg>',
-  cal3:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="14" x2="8" y2="18"/><line x1="16" y1="14" x2="16" y2="18"/></svg>'
+  cal2:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+  cal3:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>'
 };
 
 let current='home', selectedNet=null, selectedPlan=null, history=['home'];
@@ -441,10 +441,10 @@ function startVerify(e){
   if(verifying) return;
   verifying=true;
   const btn=$('waBtnInner');
-  btn.innerHTML = `<svg class="spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.2-8.55"/></svg> Verifying payment…`;
+  btn.innerHTML = `<svg class="spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.2-8.55"/></svg> Verifying...`;
   setTimeout(()=>{
     verifying=false;
-    btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.6 5.9L0 24l6.3-1.6a12 12 0 0 0 5.7 1.4h.01c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.3z"/></svg> Send Proof on WhatsApp`;
+    btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.1 1.6 5.9L0 24l6.3-1.6a12 12 0 0 0 5.7 1.4h.01c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5zm-8.5 18.6h-.01c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.8 1 1-3.6-.2-.4C2 17 1.5 14.6 1.5 12c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10z"/></svg> Send Proof on WhatsApp`;
     $('okPlan').textContent = `${selectedPlan.label} • ${selectedPlan.duration}`;
     $('okAmt').textContent = `${selectedPlan.price.toLocaleString()} TZS`;
     go('success');
